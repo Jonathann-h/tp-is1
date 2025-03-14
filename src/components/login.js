@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { AlertCircle } from "./Icons/AlertCircle";
+import { AlertCircle, Lock } from "lucide-react"; // Agregamos el icono de candado
 import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 import "./login.css";
 
@@ -19,7 +19,9 @@ export default function Login() {
   return (
     <div className="login-container">
       <Card className="login-card">
-        <h2 className="login-title">Acceso al Sistema</h2>
+        <h2 className="login-title">
+          <Lock className="lock-icon" /> Acceso al Sistema
+        </h2>
         <CardContent>
           <div className="input-group">
             <label className="label">Número de Cédula</label>
