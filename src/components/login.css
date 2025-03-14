@@ -14,9 +14,37 @@
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-/* Título con ícono */
+/* Pestañas de selección */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #e9ecef;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Título con icono */
 .login-title {
   display: flex;
   align-items: center;
@@ -26,10 +54,11 @@
   font-weight: bold;
   text-align: center;
   color: #333;
+  margin-bottom: 15px;
 }
 
-/* Ícono de candado */
-.lock-icon {
+/* Íconos */
+.login-icon {
   width: 24px;
   height: 24px;
   color: #007bff;
@@ -52,6 +81,18 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.input::placeholder {
+  color: #999;
+  font-size: 14px;
 }
 
 /* Botón */
@@ -71,12 +112,21 @@
   background-color: #0056b3;
 }
 
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
 /* Mensaje emergente */
 .dialog-message {
   display: flex;
   align-items: center;
   color: #dc3545;
   font-size: 14px;
+  padding: 10px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
 }
 
 .icon {
@@ -84,4 +134,39 @@
   height: 20px;
   margin-right: 8px;
   color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+}
+
+/* Custom Scrollbar */
+.login-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.login-card::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.login-card::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 6px;
+}
+
+.login-card::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
 }

@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { AlertCircle, Lock } from "lucide-react"; // Agregamos el icono de candado
+import { AlertCircle, Lock, GraduationCap, User } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 import "./login.css";
 
 export default function Login() {
   const [password, setPassword] = useState("");
   const [showMessage, setShowMessage] = useState(false);
+  const [userType, setUserType] = useState("Alumno"); // Estado para cambiar entre Alumno y Profesor
 
   const validatePassword = (value) => {
     setPassword(value);
@@ -19,9 +20,32 @@ export default function Login() {
   return (
     <div className="login-container">
       <Card className="login-card">
+        {/* Pestañas de selección */}
+        <div className="tabs">
+          <button
+            className={`tab ${userType === "Alumno" ? "active" : ""}`}
+            onClick={() => setUserType("Alumno")}
+          >
+            Alumno
+          </button>
+          <button
+            className={`tab ${userType === "Profesor" ? "active" : ""}`}
+            onClick={() => setUserType("Profesor")}
+          >
+            Profesor
+          </button>
+        </div>
+
+        {/* Título con icono dinámico */}
         <h2 className="login-title">
-          <Lock className="lock-icon" /> Acceso al Sistema
+          {userType === "Alumno" ? (
+            <GraduationCap className="login-icon" />
+          ) : (
+            <User className="login-icon" />
+          )}
+          Acceso {userType}
         </h2>
+
         <CardContent>
           <div className="input-group">
             <label className="label">Número de Cédula</label>
@@ -46,6 +70,8 @@ export default function Login() {
           <Button className="login-button">Ingresar</Button>
         </CardContent>
       </Card>
+
+      {/* Mensaje de error */}
       <Dialog open={showMessage} onOpenChange={setShowMessage}>
         <DialogContent>
           <DialogTitle className="sr-only">Contraseña no válida</DialogTitle>
