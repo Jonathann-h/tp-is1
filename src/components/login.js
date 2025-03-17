@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { AlertCircle, Lock, GraduationCap, User } from "lucide-react";
+import { AlertCircle, GraduationCap, User } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 import "./login.css";
 
@@ -11,10 +11,9 @@ export default function Login() {
   const [showMessage, setShowMessage] = useState(false);
   const [userType, setUserType] = useState("Alumno"); // Estado para cambiar entre Alumno y Profesor
 
-  const validatePassword = (value) => {
-    setPassword(value);
+  const validatePassword = () => {
     const regex = /^(?=.*[!@#$%^&*])(?=.*\d).{5,}$/;
-    setShowMessage(!regex.test(value));
+    setShowMessage(!regex.test(password)); // Solo se activa al presionar "Ingresar"
   };
 
   return (
@@ -64,23 +63,23 @@ export default function Login() {
               placeholder="Ingrese su contraseña"
               className="input"
               value={password}
-              onChange={(e) => validatePassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)} // Se almacena pero no se evalúa aún
             />
           </div>
-          <Button className="login-button">Ingresar</Button>
+          <Button className="login-button" onClick={validatePassword}>
+            Ingresar
+          </Button>
         </CardContent>
       </Card>
 
-      {/* Mensaje de error */}
-      <Dialog open={showMessage} onOpenChange={setShowMessage}>
-        <DialogContent>
-          <DialogTitle className="sr-only">Contraseña no válida</DialogTitle>
-          <div className="dialog-message">
-            <AlertCircle className="icon" />
-            La contraseña debe tener al menos 5 caracteres, un número y un carácter especial.
-          </div>
-        </DialogContent>
-      </Dialog>
+      {/* Mensaje emergente flotante */}
+      {showMessage && (
+        <div className="floating-message">
+          <AlertCircle className="icon" />
+          La contraseña debe tener al menos 5 caracteres, un número y un carácter especial.
+          <button className="close-button" onClick={() => setShowMessage(false)}>✖</button>
+        </div>
+      )}
     </div>
   );
 }
