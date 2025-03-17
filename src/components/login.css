@@ -9,12 +9,13 @@
 
 /* Tarjeta de login */
 .login-card {
-  width: 400px;
-  padding: 20px;
+  width: 380px;
+  padding: 24px;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;  /* Bordes más suaves */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
   overflow-y: auto;
+  border: 1px solid #dee2e6; /*Borde suave para mejorar el contraste */
 }
 
 /* Pestañas de selección */
@@ -77,18 +78,31 @@
 
 .input {
   width: 100%;
-  padding: 8px;
+  max-width: 400px;
+  padding: 8px 10px; /* Reduce el padding interno */
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .input:focus {
-  outline: none;
   border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
+
+.input-group {
+  margin-bottom: 20px; /* Aumentamos el espacio entre inputs */
+}
+
+.login-title {
+  margin-bottom: 20px; /* Más espacio entre el título y los inputs */
+}
+
+.tabs {
+  margin-bottom: 20px; /* Espacio entre pestañas y formulario */
+}
+
 
 .input::placeholder {
   color: #999;
