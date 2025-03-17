@@ -117,23 +117,46 @@
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
 }
 
-/* Mensaje emergente */
-.dialog-message {
+/* Mensaje emergente flotante */
+.floating-message {
+  position: fixed; /* Hace que el cuadro no mueva el contenido */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Lo centra en la pantalla */
+  background: white; /* Fondo blanco para que parezca un cuadro */
+  padding: 15px 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto flotante */
   display: flex;
   align-items: center;
-  color: #dc3545;
+  gap: 10px;
   font-size: 14px;
-  padding: 10px;
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 6px;
+  color: #dc3545; /* Color de error */
+  border: 2px solid #f5c6cb; /* Borde rojo claro */
+  max-width: 320px;
+  text-align: center;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+/* Ícono de advertencia */
 .icon {
   width: 20px;
   height: 20px;
-  margin-right: 8px;
   color: #dc3545;
+}
+
+/* Botón para cerrar */
+.close-button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.close-button:hover {
+  color: #a71d2a;
 }
 
 /* Responsive Design */
