@@ -19,19 +19,29 @@
     padding: 0;
   }
   
+  /* Estilos para el menú desplegable */
   .sidebar li {
     padding: 10px;
     cursor: pointer;
     transition: 0.3s;
   }
-  
+
   .sidebar li:hover {
     background: #236dbd;
   }
-  
+
   .submenu {
     padding-left: 15px;
     background: rgba(255, 255, 255, 0.1);
+  }
+
+  .submenu li {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .submenu li:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
   
   .content {
