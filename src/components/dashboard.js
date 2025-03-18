@@ -1,9 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { LogOut } from "lucide-react"; // Importa el icono
 import "./dashboard.css";
 
 export default function Dashboard() {
   const [academicoOpen, setAcademicoOpen] = useState(false);
   const [adminOpen, setAdminOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/"); // Redirige al Login
+  };
 
   return (
     <div className="dashboard-container">
@@ -30,7 +37,14 @@ export default function Dashboard() {
             )}
           </li>
         </ul>
+
+        {/* Botón de Cerrar Sesión con icono */}
+        <button className="logout-button" onClick={handleLogout}>
+          <LogOut className="logout-icon" />
+          Cerrar Sesión
+        </button>
       </aside>
+
       <main className="content">
         <h1>Bienvenido al Panel</h1>
         <p>Selecciona una opción del menú.</p>

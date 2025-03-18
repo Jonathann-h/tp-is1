@@ -5,7 +5,7 @@
   
   .sidebar {
     width: 250px;
-    background: #007bff;
+    background: #4274ca;
     color: white;
     padding: 20px;
   }
@@ -26,7 +26,7 @@
   }
   
   .sidebar li:hover {
-    background: #0056b3;
+    background: #236dbd;
   }
   
   .submenu {
@@ -38,4 +38,29 @@
     flex: 1;
     padding: 20px;
   }
-  
+
+.logout-button {
+  width: 100%;
+  background: #3b598d;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre el icono y el texto */
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.logout-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.logout-button:hover {
+  background: #d9534f; /* Mantiene el color sin cambios al hacer hover */
+}

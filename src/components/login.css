@@ -36,12 +36,12 @@
 }
 
 .tab.active {
-  background-color: #007bff;
+  background-color: #305088;
   color: white;
 }
 
 .tab:hover {
-  background-color: #007bff;
+  background-color: #305088;
   color: white;
 }
 
@@ -62,7 +62,7 @@
 .login-icon {
   width: 24px;
   height: 24px;
-  color: #007bff;
+  color: #305088
 }
 
 /* Campos de entrada */
@@ -87,7 +87,7 @@
 }
 
 .input:focus {
-  border-color: #007bff;
+  border-color: #305088;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
@@ -113,7 +113,7 @@
 .login-button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #4274ca;
   color: white;
   border: none;
   border-radius: 6px;
@@ -123,7 +123,7 @@
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  background-color: #4274ca;
 }
 
 .login-button:focus {
