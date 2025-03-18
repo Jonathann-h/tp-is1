@@ -1,10 +1,15 @@
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/login.js";
+import Dashboard from "./components/dashboard.js";
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

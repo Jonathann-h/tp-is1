@@ -1,25 +1,29 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { AlertCircle, GraduationCap, User } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 import "./login.css";
 
 export default function Login() {
   const [password, setPassword] = useState("");
   const [showMessage, setShowMessage] = useState(false);
-  const [userType, setUserType] = useState("Alumno"); // Estado para cambiar entre Alumno y Profesor
+  const [userType, setUserType] = useState("Alumno");
+  const navigate = useNavigate(); // Hook para redirigir
 
   const validatePassword = () => {
     const regex = /^(?=.*[!@#$%^&*])(?=.*\d).{5,}$/;
-    setShowMessage(!regex.test(password)); // Solo se activa al presionar "Ingresar"
+    if (!regex.test(password)) {
+      setShowMessage(true);
+    } else {
+      navigate("/dashboard"); // Redirige a Dashboard si la contraseña es válida
+    }
   };
 
   return (
     <div className="login-container">
       <Card className="login-card">
-        {/* Pestañas de selección */}
         <div className="tabs">
           <button
             className={`tab ${userType === "Alumno" ? "active" : ""}`}
@@ -35,7 +39,6 @@ export default function Login() {
           </button>
         </div>
 
-        {/* Título con icono dinámico */}
         <h2 className="login-title">
           {userType === "Alumno" ? (
             <GraduationCap className="login-icon" />
@@ -48,13 +51,7 @@ export default function Login() {
         <CardContent>
           <div className="input-group">
             <label className="label">Número de Cédula</label>
-            <Input
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              placeholder="Ingrese su cédula"
-              className="input"
-            />
+            <Input type="text" inputMode="numeric" placeholder="Ingrese su cédula" className="input" />
           </div>
           <div className="input-group">
             <label className="label">Contraseña</label>
@@ -63,7 +60,7 @@ export default function Login() {
               placeholder="Ingrese su contraseña"
               className="input"
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // Se almacena pero no se evalúa aún
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <Button className="login-button" onClick={validatePassword}>
@@ -72,7 +69,6 @@ export default function Login() {
         </CardContent>
       </Card>
 
-      {/* Mensaje emergente flotante */}
       {showMessage && (
         <div className="floating-message">
           <AlertCircle className="icon" />
