@@ -4,7 +4,7 @@ import Dashboard from "./components/dashboard.js";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/tp-is1">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
