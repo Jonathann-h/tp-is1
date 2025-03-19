@@ -1,6 +1,6 @@
 .dashboard-container {
-  display: flex;
-  height: 100vh;
+  display: flex;  /*Permite que los elementos se alineen en fila */
+  height: 100vh;  /*Alto del contenedor */
 }
 
 /* Estilos de la barra lateral */
@@ -19,57 +19,59 @@
 
 /* Estilos del menú */
 .sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /*Quita los puntos de la lista */
+  padding: 0;       /*Quita el espacio interno de la lista */
+  margin: 0;        /*Quita el espacio externo de la lista */
 }
 
 .sidebar li {
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
+  padding: 10px;      /*Espacio interno de los elementos */
+  border-radius: 5px; /*Borde redondeado */
+  cursor: pointer;    /*Cursor de la mano */
+  transition: background 0.3s;  /*Transición de color al pasar el mouse */
 }
 
 .sidebar li:hover {
-  background: #34495e;
+  background: #34495e; /*Color de fondo al pasar el mouse */
 }
 
 /* Submenú */
 .submenu {
-  padding-left: 15px;
-  display: block;
+  padding-left: 15px; /*Espacio interno del submenú */
+  display: block;     /*Permite que los elementos se alineen en bloque */
 }
 
 .submenu li {
-  padding: 8px;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  margin: 5px 0;
+  padding: 8px;     /*Espacio interno de los elementos */
+  font-size: 14px;  /*Tamaño de la fuente */
+  background: rgba(255, 255, 255, 0.1); /*Color de fondo con transparencia */
+  border-radius: 3px; /*Borde redondeado */
+  margin: 5px 0;  /*Espacio externo de los elementos */
 }
 
 /* Botón de cierre de sesión */
 .logout-button {
-  margin-top: auto;
-  padding: 10px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 5px;
+  margin-top: auto;   /*Permite que el botón se alinee al final del menú */
+  padding: 10px;      /*Espacio interno del botón */
+  background-color: #e74c3c;  /*Color de fondo */
+  color: white; /*Color de texto */
+  border: none; /*Quita el borde */
+  cursor: pointer;  /*Cursor de la mano */
+  text-align: center; /*Alineación del texto */
+  font-size: 16px;  /*Tamaño de la fuente */
+  border-radius: 5px; /*Borde redondeado */
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
+  background-color: #c0392b; /*Color de fondo al pasar el mouse */
 }
 
 /* Contenido */
 .content {
-  flex: 1;
-  padding: 20px;
-  background: #ecf0f1;
-  overflow-y: auto;
+  flex: 1; /*Permite que el contenido crezca y ocupe el espacio restante */
+  padding: 20px; /*Espacio interno */
+  background: #ecf0f1;  /*Color de fondo */
+  overflow-y: auto; /*Permite desplazamiento si el contenido es muy grande */
 }
+
+/*Jonathan Hoyos*/
