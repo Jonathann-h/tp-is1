@@ -74,4 +74,9 @@
   overflow-y: auto; /*Permite desplazamiento si el contenido es muy grande */
 }
 
+.menu-icon {  /*para que los iconos se vean alineados con el texto*/
+  margin-right: 8px;  /*Espacio a la derecha del icono */
+  vertical-align: middle; /*Alineación vertical */
+}
+
 /*Jonathan Hoyos*/
