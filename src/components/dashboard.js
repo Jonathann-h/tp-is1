@@ -1,6 +1,17 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import { useNavigate } from "react-router-dom";
-import { LogOut } from "lucide-react";
+import {
+  Home,
+  Users,
+  GraduationCap,
+  Briefcase,
+  BarChart,
+  Settings,
+  LifeBuoy,
+  FileText,
+  User,
+  LogOut,
+} from "lucide-react"; // Se importan los iconos de Lucide
 import "./dashboard.css";
 
 export default function Dashboard() {
@@ -24,11 +35,13 @@ export default function Dashboard() {
         <h2>Menú</h2>
         <ul>
           {/* Inicio */}
-          <li>🏠 Inicio</li>
+          <li>
+            <Home className="menu-icon" /> Inicio
+          </li>
 
           {/* Gestión de Usuarios */}
           <li onClick={() => setUsuariosOpen(!usuariosOpen)}>
-            👥 Gestión de Usuarios {usuariosOpen ? "▲" : "▼"}
+            <Users className="menu-icon" /> Gestión de Usuarios {usuariosOpen ? "▲" : "▼"}
             {usuariosOpen && (
               <ul className="submenu">
                 <li>Registro de Usuarios</li>
@@ -40,7 +53,7 @@ export default function Dashboard() {
 
           {/* Gestión Académica */}
           <li onClick={() => setAcademicoOpen(!academicoOpen)}>
-            📘 Gestión Académica {academicoOpen ? "▲" : "▼"}
+            <GraduationCap className="menu-icon" /> Gestión Académica {academicoOpen ? "▲" : "▼"}
             {academicoOpen && (
               <ul className="submenu">
                 <li>Docentes</li>
@@ -55,7 +68,7 @@ export default function Dashboard() {
 
           {/* Gestión Financiera */}
           <li onClick={() => setFinancieroOpen(!financieroOpen)}>
-            💰 Gestión Financiera {financieroOpen ? "▲" : "▼"}
+            <Briefcase className="menu-icon" /> Gestión Financiera {financieroOpen ? "▲" : "▼"}
             {financieroOpen && (
               <ul className="submenu">
                 <li>Aranceles y Cuotas</li>
@@ -68,7 +81,7 @@ export default function Dashboard() {
 
           {/* Reportes */}
           <li onClick={() => setReportesOpen(!reportesOpen)}>
-            📊 Reportes {reportesOpen ? "▲" : "▼"}
+            <BarChart className="menu-icon" /> Reportes {reportesOpen ? "▲" : "▼"}
             {reportesOpen && (
               <ul className="submenu">
                 <li>Reportes Académicos</li>
@@ -79,7 +92,7 @@ export default function Dashboard() {
 
           {/* Configuración */}
           <li onClick={() => setConfiguracionOpen(!configuracionOpen)}>
-            ⚙️ Configuración {configuracionOpen ? "▲" : "▼"}
+            <Settings className="menu-icon" /> Configuración {configuracionOpen ? "▲" : "▼"}
             {configuracionOpen && (
               <ul className="submenu">
                 <li>Roles y Permisos</li>
@@ -91,7 +104,7 @@ export default function Dashboard() {
 
           {/* Soporte */}
           <li onClick={() => setSoporteOpen(!soporteOpen)}>
-            🛠️ Soporte {soporteOpen ? "▲" : "▼"}
+            <LifeBuoy className="menu-icon" /> Soporte {soporteOpen ? "▲" : "▼"}
             {soporteOpen && (
               <ul className="submenu">
                 <li>Soporte Remoto</li>
@@ -102,7 +115,7 @@ export default function Dashboard() {
 
           {/* Auditoría */}
           <li onClick={() => setAuditoriaOpen(!auditoriaOpen)}>
-            📜 Auditoría {auditoriaOpen ? "▲" : "▼"}
+            <FileText className="menu-icon" /> Auditoría {auditoriaOpen ? "▲" : "▼"}
             {auditoriaOpen && (
               <ul className="submenu">
                 <li>Registros de Acceso</li>
@@ -113,11 +126,10 @@ export default function Dashboard() {
 
           {/* Perfil de Usuario */}
           <li onClick={() => setPerfilOpen(!perfilOpen)}>
-            👤 Perfil de Usuario {perfilOpen ? "▲" : "▼"}
+            <User className="menu-icon" /> Perfil de Usuario {perfilOpen ? "▲" : "▼"}
             {perfilOpen && (
               <ul className="submenu">
                 <li>Mi Perfil</li>
-                
               </ul>
             )}
           </li>
