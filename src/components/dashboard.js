@@ -39,7 +39,7 @@ export default function Dashboard() {
         <ul>
           <li
             className={location.pathname === "/dashboard/inicio" ? "active" : ""}
-            onClick={() => navigate("/dashboard/inicio")} // Navega a /dashboard/inicio
+            onClick={() => navigate("/dashboard/inicio")}
           >
             <Home className="menu-icon" /> Inicio
           </li>
@@ -49,8 +49,12 @@ export default function Dashboard() {
             <Users className="menu-icon" /> Gestión de Usuarios {usuariosOpen ? "▲" : "▼"}
             {usuariosOpen && (
               <ul className="submenu">
-                <li className={location.pathname === "/usuarios/registro" ? "active" : ""} 
-                    onClick={() => navigate("/usuarios/registro")}>Registro de Usuarios</li>
+                <li
+                  className={location.pathname === "/dashboard/usuarios/registro" ? "active" : ""}
+                  onClick={() => navigate("/dashboard/usuarios/registro")}
+                >
+                  Registro de Usuarios
+                </li>
                 <li className={location.pathname === "/usuarios/roles" ? "active" : ""} 
                     onClick={() => navigate("/usuarios/roles")}>Roles y Permisos</li>
                 <li className={location.pathname === "/usuarios/cambiar-password" ? "active" : ""} 
