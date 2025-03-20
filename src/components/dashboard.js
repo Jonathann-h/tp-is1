@@ -23,6 +23,12 @@ import ProgramasAcademicos from "./academico/ProgramasAcademicos.js"; // Importa
 import ClasesYHorarios from "./academico/ClasesYHorarios.js"; // Importa el componente ClasesYHorarios
 import Calificaciones from "./academico/Calificaciones.js"; // Importa el componente Calificaciones
 import Certificados from "./academico/Certificados.js"; // Importa el componente Certificados
+import ArancelesYCuotas from "./financiero/ArancelesYCuotas.js"; // Importa el componente ArancelesYCuotas
+import Pagos from "./financiero/Pagos.js"; // Importa el componente Pagos
+import Facturacion from "./financiero/Facturacion.js"; // Importa el componente Facturación
+import AlertasVencimiento from "./financiero/AlertasVencimiento.js"; // Importa el componente AlertasVencimiento
+import ReportesAcademicos from "./reportes/ReportesAcademicos.js"; // Importa el componente ReportesAcademicos
+import ReportesFinancieros from "./reportes/ReportesFinancieros.js"; // Importa el componente ReportesFinancieros
 
 export default function Dashboard() {
   const [usuariosOpen, setUsuariosOpen] = useState(false);
@@ -96,6 +102,43 @@ export default function Dashboard() {
               </ul>
             )}
           </li>
+
+          {/* Gestión Financiera */}
+          <li onClick={() => setFinancieroOpen(!financieroOpen)}>
+            <Briefcase className="menu-icon" /> Gestión Financiera {financieroOpen ? "▲" : "▼"}
+            {financieroOpen && (
+              <ul className="submenu">
+                <li
+                  className={location.pathname === "/dashboard/financiero/aranceles" ? "active" : ""}
+                  onClick={() => navigate("/dashboard/financiero/aranceles")}>Aranceles y Cuotas</li>
+                <li
+                  className={location.pathname === "/dashboard/financiero/pagos" ? "active" : ""}
+                  onClick={() => navigate("/dashboard/financiero/pagos")}>Pagos</li>
+                <li
+                  className={location.pathname === "/dashboard/financiero/facturacion" ? "active" : ""}
+                  onClick={() => navigate("/dashboard/financiero/facturacion")}>Facturación</li>
+                <li
+                  className={location.pathname === "/dashboard/financiero/alertas" ? "active" : ""}
+                  onClick={() => navigate("/dashboard/financiero/alertas")}>Alertas de Vencimiento</li>
+              </ul>
+            )}
+          </li>
+
+            {/* Reportes */}
+            <li onClick={() => setReportesOpen(!reportesOpen)}>
+              <BarChart className="menu-icon" /> Reportes {reportesOpen ? "▲" : "▼"}
+              {reportesOpen && (
+                <ul className="submenu">
+                  <li
+                    className={location.pathname === "/dashboard/reportes/academicos" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/reportes/academicos")}>Reportes Académicos</li>
+                  <li
+                    className={location.pathname === "/dashboard/reportes/financieros" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/reportes/financieros")}>Reportes Financieros</li>
+                </ul>
+              )}
+            </li>
+
         </ul>
 
         {/* Botón de Cerrar Sesión con icono */}
@@ -117,6 +160,12 @@ export default function Dashboard() {
           <Route path="/academico/clases" element={<ClasesYHorarios />} /> {/* Ruta para Clases y Horarios */}
           <Route path="/academico/calificaciones" element={<Calificaciones />} /> {/* Ruta para Calificaciones */}
           <Route path="/academico/certificados" element={<Certificados />} /> {/* Ruta para Certificados */}
+          <Route path="/financiero/aranceles" element={<ArancelesYCuotas />} /> {/* Ruta para Aranceles y Cuotas */}
+          <Route path="/financiero/pagos" element={<Pagos />} /> {/* Ruta para Pagos */}
+          <Route path="/financiero/facturacion" element={<Facturacion />} /> {/* Ruta para Facturación */}
+          <Route path="/financiero/alertas" element={<AlertasVencimiento />} /> {/* Ruta para Alertas de Vencimiento */}
+          <Route path="/reportes/academicos" element={<ReportesAcademicos />} /> {/* Ruta para Reportes Académicos */}
+          <Route path="/reportes/financieros" element={<ReportesFinancieros />} /> {/* Ruta para Reportes Financieros */}
         </Routes>
       </main>
     </div>
