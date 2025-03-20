@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./RegistroUsuarios.css";
+import "./RegistroUsuarios.css"; // Importa el archivo CSS
 
 export default function RegistroUsuarios() {
   // Estado para almacenar la lista de usuarios
@@ -31,6 +31,15 @@ export default function RegistroUsuarios() {
       setNuevoUsuario({ nombre: "", email: "", rol: "" }); // Limpia el formulario
     } else {
       alert("Por favor, completa todos los campos.");
+    }
+  };
+
+  // Función para eliminar un usuario
+  const eliminarUsuario = (id) => {
+    const confirmar = window.confirm("¿Estás seguro de que deseas eliminar este usuario?");
+    if (confirmar) {
+      const usuariosActualizados = usuarios.filter((usuario) => usuario.id !== id);
+      setUsuarios(usuariosActualizados); // Actualiza la lista de usuarios
     }
   };
 
@@ -91,6 +100,7 @@ export default function RegistroUsuarios() {
               <th>Nombre</th>
               <th>Email</th>
               <th>Rol</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -100,6 +110,14 @@ export default function RegistroUsuarios() {
                 <td>{usuario.nombre}</td>
                 <td>{usuario.email}</td>
                 <td>{usuario.rol}</td>
+                <td>
+                  <button
+                    className="btn-eliminar"
+                    onClick={() => eliminarUsuario(usuario.id)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
