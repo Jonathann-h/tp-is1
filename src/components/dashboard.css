@@ -5,6 +5,7 @@
 
 /* Estilos de la barra lateral */
 .sidebar {
+  display: flex;  /*Permite que los elementos se alineen en fila */
   width: 250px; /*Ancho de la barra lateral */
   background: #2c3e50;  /*Color de fondo (2c3e50)(4274ca)*/
   color: white; /*Color de texto */
