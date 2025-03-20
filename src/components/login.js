@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importar useNavigate
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -10,20 +10,21 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [userType, setUserType] = useState("Alumno");
-  const navigate = useNavigate(); // Hook para redirigir
+  const navigate = useNavigate();
 
   const validatePassword = () => {
     const regex = /^(?=.*[!@#$%^&*])(?=.*\d).{5,}$/;
     if (!regex.test(password)) {
       setShowMessage(true);
     } else {
-      navigate("/dashboard"); // Redirige a Dashboard si la contraseña es válida
+      navigate("/dashboard");
     }
   };
 
   return (
     <div className="login-container">
       <Card className="login-card">
+        {/* Tabs de selección */}
         <div className="tabs">
           <button
             className={`tab ${userType === "Alumno" ? "active" : ""}`}
@@ -39,6 +40,7 @@ export default function Login() {
           </button>
         </div>
 
+        {/* Título con icono */}
         <h2 className="login-title">
           {userType === "Alumno" ? (
             <GraduationCap className="login-icon" />
@@ -51,7 +53,12 @@ export default function Login() {
         <CardContent>
           <div className="input-group">
             <label className="label">Número de Cédula</label>
-            <Input type="text" inputMode="numeric" placeholder="Ingrese su cédula" className="input" />
+            <Input
+              type="text"
+              inputMode="numeric"
+              placeholder="Ingrese su cédula"
+              className="input"
+            />
           </div>
           <div className="input-group">
             <label className="label">Contraseña</label>
@@ -69,6 +76,7 @@ export default function Login() {
         </CardContent>
       </Card>
 
+      {/* Mensaje emergente de error */}
       {showMessage && (
         <div className="floating-message">
           <AlertCircle className="icon" />

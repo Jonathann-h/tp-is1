@@ -1,10 +1,10 @@
-/* Fondo claro */
+/* Fondo con degradado */
 .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #305088, #1e3a66);
 }
 
 /* Tarjeta de login */
@@ -12,27 +12,28 @@
   width: 380px;
   padding: 24px;
   background-color: white;
-  border-radius: 16px;  /* Bordes más suaves */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
-  border: 1px solid #dee2e6; /*Borde suave para mejorar el contraste */
+  border: none;
 }
 
-/* Pestañas de selección */
+/* Tabs de selección */
 .tabs {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .tab {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border: none;
   background-color: #e9ecef;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  border-radius: 6px;
 }
 
 .tab.active {
@@ -41,7 +42,7 @@
 }
 
 .tab:hover {
-  background-color: #305088;
+  background-color: #1e3a66;
   color: white;
 }
 
@@ -51,58 +52,46 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  color: #333;
-  margin-bottom: 15px;
+  color: #1e3a66;
+  margin-bottom: 20px;
 }
 
 /* Íconos */
 .login-icon {
-  width: 24px;
-  height: 24px;
-  color: #305088
+  width: 26px;
+  height: 26px;
+  color: #305088;
 }
 
 /* Campos de entrada */
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .label {
   display: block;
-  color: #555;
+  color: #444;
   font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .input {
   width: 100%;
-  max-width: 400px;
-  padding: 8px 10px; /* Reduce el padding interno */
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
 .input:focus {
   border-color: #305088;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 0 8px rgba(48, 80, 136, 0.3);
+  outline: none;
 }
-
-.input-group {
-  margin-bottom: 20px; /* Aumentamos el espacio entre inputs */
-}
-
-.login-title {
-  margin-bottom: 20px; /* Más espacio entre el título y los inputs */
-}
-
-.tabs {
-  margin-bottom: 20px; /* Espacio entre pestañas y formulario */
-}
-
 
 .input::placeholder {
   color: #999;
@@ -112,58 +101,54 @@
 /* Botón */
 .login-button {
   width: 100%;
-  padding: 10px;
-  background-color: #4274ca;
+  padding: 12px;
+  background-color: #305088;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  font-size: 16px;
 }
 
 .login-button:hover {
-  background-color: #4274ca;
+  background-color: #1e3a66;
 }
 
-.login-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-}
-
-/* Mensaje emergente flotante */
+/* Mensaje emergente */
 .floating-message {
-  position: fixed; /* Hace que el cuadro no mueva el contenido */
-  top: 50%;
+  position: fixed;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%); /* Lo centra en la pantalla */
-  background: white; /* Fondo blanco para que parezca un cuadro */
-  padding: 15px 20px;
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto flotante */
+  transform: translateX(-50%);
+  background: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: #dc3545; /* Color de error */
-  border: 2px solid #f5c6cb; /* Borde rojo claro */
+  color: #d9534f;
+  border: 2px solid #f5c6cb;
   max-width: 320px;
   text-align: center;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000;
 }
 
-/* Ícono de advertencia */
+/* Icono de error */
 .icon {
   width: 20px;
   height: 20px;
-  color: #dc3545;
+  color: #d9534f;
 }
 
-/* Botón para cerrar */
+/* Botón de cerrar */
 .close-button {
   background: none;
   border: none;
-  color: #dc3545;
+  color: #d9534f;
   font-size: 18px;
   cursor: pointer;
   margin-left: auto;
@@ -173,37 +158,18 @@
   color: #a71d2a;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 480px) {
   .login-card {
     width: 90%;
-    padding: 15px;
+    padding: 20px;
   }
 
   .login-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .input {
-    font-size: 12px;
+    font-size: 13px;
   }
-}
-
-/* Custom Scrollbar */
-.login-card::-webkit-scrollbar {
-  width: 8px;
-}
-
-.login-card::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 6px;
-}
-
-.login-card::-webkit-scrollbar-thumb {
-  background: #007bff;
-  border-radius: 6px;
-}
-
-.login-card::-webkit-scrollbar-thumb:hover {
-  background: #0056b3;
 }
