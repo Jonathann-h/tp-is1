@@ -15,6 +15,8 @@ import {
 import "./dashboard.css";
 import Inicio from "./Inicio"; // Importa el componente Inicio
 import RegistroUsuarios from "./usuarios/RegistroUsuarios"; // Importa el componente RegistroUsuarios
+import Roles from "./usuarios/RolesYPermisos"; // Importa el componente Roles
+import CambioPassword from "./usuarios/CambioPassword"; // Importa el componente CambioPassword
 
 export default function Dashboard() {
   const [usuariosOpen, setUsuariosOpen] = useState(false);
@@ -52,18 +54,14 @@ export default function Dashboard() {
                 <li
                   className={location.pathname === "/dashboard/usuarios/registro" ? "active" : ""}
                   onClick={() => navigate("/dashboard/usuarios/registro")}
-                >
-                  Registro de Usuarios
-                </li>
+                > Registro de Usuarios </li>
                 <li className={location.pathname === "/usuarios/roles" ? "active" : ""} 
-                    onClick={() => navigate("/usuarios/roles")}>Roles y Permisos</li>
+                    onClick={() => navigate("/dashboard/usuarios/roles")}>Roles y Permisos</li>
                 <li className={location.pathname === "/usuarios/cambiar-password" ? "active" : ""} 
-                    onClick={() => navigate("/usuarios/cambiar-password")}>Cambio de Contraseña</li>
+                    onClick={() => navigate("/dashboard/usuarios/cambiar-password")}>Cambio de Contraseña</li>
               </ul>
             )}
           </li>
-
-          {/* Repite este patrón para las demás opciones del menú */}
         </ul>
 
         {/* Botón de Cerrar Sesión con icono */}
@@ -77,6 +75,8 @@ export default function Dashboard() {
         <Routes>
           <Route path="/inicio" element={<Inicio />} /> {/* Ruta para Inicio */}
           <Route path="/usuarios/registro" element={<RegistroUsuarios />} /> {/* Ruta para Registro de Usuarios */}
+          <Route path="/usuarios/roles" element={<Roles />} /> {/* Ruta para Roles y Permisos */}
+          <Route path="/usuarios/cambiar-password" element={<CambioPassword />} /> {/* Ruta para Cambio de Contraseña */}
         </Routes>
       </main>
     </div>
