@@ -16,7 +16,7 @@ import "./dashboard.css";
 import Inicio from "./Inicio"; // Importa el componente Inicio
 import RegistroUsuarios from "./usuarios/RegistroUsuarios"; // Importa el componente RegistroUsuarios
 import Roles from "./usuarios/RolesYPermisos"; // Importa el componente Roles
-import CambioPassword from "./usuarios/CambioPassword"; // Importa el componente CambioPassword
+import CambioPassword from "./usuarios/CambiarContrasenia.js"; // Importa el componente CambioPassword
 import Docentes from "./academico/Docentes.js"; // Importa el componente Docentes
 import Alumnos from "./academico/Alumnos.js"; // Importa el componente Alumnos
 import ProgramasAcademicos from "./academico/ProgramasAcademicos.js"; // Importa el componente ProgramasAcademicos
