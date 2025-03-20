@@ -1,5 +1,5 @@
 import { useState } from "react"; 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import {
   Home,
   Users,
@@ -14,7 +14,7 @@ import {
 } from "lucide-react"; // Se importan los iconos de Lucide
 import "./dashboard.css";
 
-export default function Dashboard() {
+export default function Dashboard() { // Componente Dashboard
   const [usuariosOpen, setUsuariosOpen] = useState(false);
   const [academicoOpen, setAcademicoOpen] = useState(false);
   const [financieroOpen, setFinancieroOpen] = useState(false);
@@ -22,8 +22,9 @@ export default function Dashboard() {
   const [configuracionOpen, setConfiguracionOpen] = useState(false);
   const [soporteOpen, setSoporteOpen] = useState(false);
   const [auditoriaOpen, setAuditoriaOpen] = useState(false);
-  const [perfilOpen, setPerfilOpen] = useState(false);
-  const navigate = useNavigate();
+  const [perfilOpen, setPerfilOpen] = useState(false); 
+  const navigate = useNavigate(); // Hook para redirigir
+  const location = useLocation(); // Hook para obtener la ubicación actual
 
   const handleLogout = () => {
     navigate("/");
@@ -33,9 +34,12 @@ export default function Dashboard() {
     <div className="dashboard-container">
       <aside className="sidebar">
         <h2>Menú</h2>
-        <ul>
+        <ul> {/* Lista de opciones del menú */}
           {/* Inicio */}
-          <li>
+          <li
+            className={location.pathname === "/inicio" ? "active" : ""}
+            onClick={() => navigate("/inicio")} // Redirige a la ruta /inicio
+          >
             <Home className="menu-icon" /> Inicio
           </li>
 
@@ -44,9 +48,12 @@ export default function Dashboard() {
             <Users className="menu-icon" /> Gestión de Usuarios {usuariosOpen ? "▲" : "▼"}
             {usuariosOpen && (
               <ul className="submenu">
-                <li>Registro de Usuarios</li>
-                <li>Roles y Permisos</li>
-                <li>Cambio de Contraseña</li>
+                <li className={location.pathname === "/usuarios/registro" ? "active" : ""} 
+                    onClick={() => navigate("/usuarios/registro")}>Registro de Usuarios</li>
+                <li className={location.pathname === "/usuarios/roles" ? "active" : ""} 
+                    onClick={() => navigate("/usuarios/roles")}>Roles y Permisos</li>
+                <li className={location.pathname === "/usuarios/cambiar-password" ? "active" : ""} 
+                    onClick={() => navigate("/usuarios/cambiar-password")}>Cambio de Contraseña</li>
               </ul>
             )}
           </li>
@@ -56,12 +63,10 @@ export default function Dashboard() {
             <GraduationCap className="menu-icon" /> Gestión Académica {academicoOpen ? "▲" : "▼"}
             {academicoOpen && (
               <ul className="submenu">
-                <li>Docentes</li>
-                <li>Alumnos</li>
-                <li>Programas Académicos</li>
-                <li>Clases y Horarios</li>
-                <li>Calificaciones</li>
-                <li>Certificados</li>
+                <li className={location.pathname === "/academico/docentes" ? "active" : ""} 
+                    onClick={() => navigate("/academico/docentes")}>Docentes</li>
+                <li className={location.pathname === "/academico/alumnos" ? "active" : ""} 
+                    onClick={() => navigate("/academico/alumnos")}>Alumnos</li>
               </ul>
             )}
           </li>

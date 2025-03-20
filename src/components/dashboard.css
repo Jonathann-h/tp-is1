@@ -35,6 +35,17 @@
   background: #34495e; /*Color de fondo al pasar el mouse */
 }
 
+/* Clase para resaltar la opción activa */
+.sidebar li.active {
+  background: #1abc9c; /* Color de resalte */
+  font-weight: bold;
+  color: white;
+}
+
+.submenu li.active {
+  background: rgba(26, 188, 156, 0.7); /* Color más claro para submenú */
+}
+
 /* Submenú */
 .submenu {
   padding-left: 15px; /*Espacio interno del submenú */
