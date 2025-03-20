@@ -29,6 +29,13 @@ import Facturacion from "./financiero/Facturacion.js"; // Importa el componente 
 import AlertasVencimiento from "./financiero/AlertasVencimiento.js"; // Importa el componente AlertasVencimiento
 import ReportesAcademicos from "./reportes/ReportesAcademicos.js"; // Importa el componente ReportesAcademicos
 import ReportesFinancieros from "./reportes/ReportesFinancieros.js"; // Importa el componente ReportesFinancieros
+import ConfigRolesYPermisos from "./configuracion/ConfigRolesYPermisos.js"; // Importa el componente ConfigRolesYPermisos
+import ConfigNotificaciones from "./configuracion/ConfigNotificaciones.js"; // Importa el componente ConfigNotificaciones
+import ExportacionDatos from "./configuracion/ExportacionDatos.js"; // Importa el componente ExportacionDatos
+import SoporteRemoto from "./soporte/SoporteRemoto.js"; // Importa el componente SoporteRemoto
+import ManualUsuario from "./soporte/ManualUsuario.js"; // Importa el componente ManualUsuario
+import RegistrosAcceso from "./auditoria/RegistrosAcceso.js"; // Importa el componente RegistrosAcceso
+import LogsSistema from "./auditoria/LogsSistema.js"; // Importa el componente LogsSistema
 
 export default function Dashboard() {
   const [usuariosOpen, setUsuariosOpen] = useState(false);
@@ -139,6 +146,54 @@ export default function Dashboard() {
               )}
             </li>
 
+            {/* Configuración */}
+            <li onClick={() => setConfiguracionOpen(!configuracionOpen)}>
+              <Settings className="menu-icon" /> Configuración {configuracionOpen ? "▲" : "▼"}
+              {configuracionOpen && (
+                <ul className="submenu">
+                  <li
+                    className={location.pathname === "/dashboard/configuracion/roles" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/configuracion/roles")}>Roles y Permisos</li>
+                  <li
+                    className={location.pathname === "/dashboard/configuracion/notificaciones" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/configuracion/notificaciones")}>Notificaciones</li>
+                  <li
+                    className={location.pathname === "/dashboard/configuracion/exportacion" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/configuracion/exportacion")}>Exportación de Datos</li>
+                </ul>
+              )}
+            </li>
+
+            {/* Soporte */}
+            <li onClick={() => setSoporteOpen(!soporteOpen)}>
+              <LifeBuoy className="menu-icon" /> Soporte {soporteOpen ? "▲" : "▼"}
+              {soporteOpen && (
+                <ul className="submenu">
+                  <li
+                    className={location.pathname === "/dashboard/soporte/remoto" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/soporte/remoto")}>Soporte Remoto</li>
+                  <li
+                    className={location.pathname === "/dashboard/soporte/manual" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/soporte/manual")}>Manual de Usuario</li>
+                </ul>
+              )}
+            </li>
+
+            {/* Auditoría */}
+            <li onClick={() => setAuditoriaOpen(!auditoriaOpen)}>
+              <FileText className="menu-icon" /> Auditoría {auditoriaOpen ? "▲" : "▼"}
+              {auditoriaOpen && (
+                <ul className="submenu">
+                  <li
+                    className={location.pathname === "/dashboard/auditoria/accesos" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/auditoria/accesos")}>Registros de Acceso</li>
+                  <li
+                    className={location.pathname === "/dashboard/auditoria/logs" ? "active" : ""}
+                    onClick={() => navigate("/dashboard/auditoria/logs")}>Logs del Sistema</li>
+                </ul>
+              )}
+            </li>
+
         </ul>
 
         {/* Botón de Cerrar Sesión con icono */}
@@ -166,6 +221,13 @@ export default function Dashboard() {
           <Route path="/financiero/alertas" element={<AlertasVencimiento />} /> {/* Ruta para Alertas de Vencimiento */}
           <Route path="/reportes/academicos" element={<ReportesAcademicos />} /> {/* Ruta para Reportes Académicos */}
           <Route path="/reportes/financieros" element={<ReportesFinancieros />} /> {/* Ruta para Reportes Financieros */}
+          <Route path="/configuracion/roles" element={<ConfigRolesYPermisos />} /> {/* Ruta para Roles y Permisos */}
+          <Route path="/configuracion/notificaciones" element={<ConfigNotificaciones />} /> {/* Ruta para Notificaciones */}
+          <Route path="/configuracion/exportacion" element={<ExportacionDatos />} /> {/* Ruta para Exportación de Datos */}
+          <Route path="/soporte/remoto" element={<SoporteRemoto />} /> {/* Ruta para Soporte Remoto */}
+          <Route path="/soporte/manual" element={<ManualUsuario />} /> {/* Ruta para Manual de Usuario */}
+          <Route path="/auditoria/accesos" element={<RegistrosAcceso />} /> {/* Ruta para Registros de Acceso */}
+          <Route path="/auditoria/logs" element={<LogsSistema />} /> {/* Ruta para Logs del Sistema */}
         </Routes>
       </main>
     </div>
