@@ -4,8 +4,8 @@ import "./Docente.css"; // Importar el archivo CSS
 const Docente = () => {
   // Estados para gestionar las clases y la asistencia
   const [clases, setClases] = useState([
-    { id: 1, nombre: "Matemáticas", fecha: "2023-10-10", asistencia: [] },
-    { id: 2, nombre: "Física", fecha: "2023-10-11", asistencia: [] },
+    { id: 1, nombre: "Matemáticas", fecha: "21/03/2025", asistencia: [] },
+    { id: 2, nombre: "Física", fecha: "221/03/2025", asistencia: [] },
   ]);
   const [nuevaClase, setNuevaClase] = useState({ nombre: "", fecha: "" });
 

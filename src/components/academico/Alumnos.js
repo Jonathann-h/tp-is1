@@ -12,8 +12,8 @@ const Alumnos = () => {
       { materia: "Química", nota: 78 },
     ],
     asistencia: [
-      { materia: "Matemáticas", presente: true, fecha: "2023-10-10" },
-      { materia: "Física", presente: false, fecha: "2023-10-11" },
+      { materia: "Matemáticas", presente: true, fecha: "21/03/2025" },
+      { materia: "Física", presente: false, fecha: "21/03/20251" },
     ],
     estadoCuenta: {
       saldo: 150000,

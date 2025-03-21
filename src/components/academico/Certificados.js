@@ -4,8 +4,8 @@ import "./Certificados.css"; // Importar el archivo CSS
 const Certificados = () => {
   // Estados para gestionar certificados
   const [certificados, setCertificados] = useState([
-    { id: 1, alumno: "Juan Pérez", programa: "Capacitación en Desarrollo Web", fecha: "2023-10-10" },
-    { id: 2, alumno: "María Gómez", programa: "Especialización en Data Science", fecha: "2023-10-11" },
+    { id: 1, alumno: "Juan Pérez", programa: "Capacitación en Desarrollo Web", fecha: "21/03/2025" },
+    { id: 2, alumno: "María Gómez", programa: "Especialización en Data Science", fecha: "21/03/2025" },
   ]);
   const [nuevoCertificado, setNuevoCertificado] = useState({ alumno: "", programa: "", fecha: "" });
 

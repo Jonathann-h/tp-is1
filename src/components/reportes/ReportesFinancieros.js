@@ -4,8 +4,8 @@ import "./ReportesFinancieros.css"; // Importar el archivo CSS
 const ReportesFinancieros = () => {
   // Datos simulados de reportes financieros
   const [reportesFinancieros] = useState([
-    { id: 1, nombre: "Reporte de Pagos", fecha: "2023-10-10" },
-    { id: 2, nombre: "Reporte de Deudas", fecha: "2023-10-11" },
+    { id: 1, nombre: "Reporte de Pagos", fecha: "20/03/2025" },
+    { id: 2, nombre: "Reporte de Deudas", fecha: "20/03/2025" },
   ]);
 
   // Función para descargar un reporte financiero

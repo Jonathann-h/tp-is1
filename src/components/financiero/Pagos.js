@@ -4,8 +4,8 @@ import "./Pagos.css"; // Importar el archivo CSS
 const Pagos = () => {
   // Datos simulados de pagos
   const [pagos] = useState([
-    { id: 1, concepto: "Matrícula", monto: 500000, fecha: "2023-10-10" },
-    { id: 2, concepto: "Mensualidad", monto: 300000, fecha: "2023-10-11" },
+    { id: 1, concepto: "Matrícula", monto: 500000, fecha: "20/03/2025" },
+    { id: 2, concepto: "Mensualidad", monto: 300000, fecha: "20/03/2025" },
   ]);
 
   return (

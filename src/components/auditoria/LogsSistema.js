@@ -4,8 +4,8 @@ import "./LogsSistema.css"; // Importar el archivo CSS
 const LogsSistema = () => {
   // Datos simulados de logs del sistema
   const [logsSistema] = useState([
-    { id: 1, fecha: "2023-10-10 10:00", tipo: "Error", descripcion: "Error en la conexión a la base de datos" },
-    { id: 2, fecha: "2023-10-10 11:30", tipo: "Advertencia", descripcion: "Espacio en disco bajo" },
+    { id: 1, fecha: "21/03/2025 10:00", tipo: "Error", descripcion: "Error en la conexión a la base de datos" },
+    { id: 2, fecha: "21/03/2025 11:30", tipo: "Advertencia", descripcion: "Espacio en disco bajo" },
   ]);
 
   return (

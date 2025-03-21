@@ -4,8 +4,8 @@ import "./ReportesAcademicos.css"; // Importar el archivo CSS
 const ReportesAcademicos = () => {
   // Datos simulados de reportes académicos
   const [reportesAcademicos] = useState([
-    { id: 1, nombre: "Reporte de Asistencia", fecha: "2023-10-10" },
-    { id: 2, nombre: "Reporte de Calificaciones", fecha: "2023-10-11" },
+    { id: 1, nombre: "Reporte de Asistencia", fecha: "20/03/2025" },
+    { id: 2, nombre: "Reporte de Calificaciones", fecha: "20/03/2025" },
   ]);
 
   // Función para descargar un reporte académico

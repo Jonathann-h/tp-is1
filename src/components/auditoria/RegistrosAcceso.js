@@ -4,8 +4,8 @@ import "./RegistrosAcceso.css"; // Importar el archivo CSS
 const RegistrosAcceso = () => {
   // Datos simulados de registros de acceso
   const [registrosAcceso] = useState([
-    { id: 1, usuario: "Juan Pérez", fecha: "2023-10-10 10:00", accion: "Inicio de sesión" },
-    { id: 2, usuario: "María Gómez", fecha: "2023-10-10 11:30", accion: "Cierre de sesión" },
+    { id: 1, usuario: "Juan Pérez", fecha: "21/03/2025 10:00", accion: "Inicio de sesión" },
+    { id: 2, usuario: "María Gómez", fecha: "21/03/2025 11:30", accion: "Cierre de sesión" },
   ]);
 
   return (
