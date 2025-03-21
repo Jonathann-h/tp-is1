@@ -31,7 +31,7 @@ import ReportesAcademicos from "./reportes/ReportesAcademicos.js"; // Importa el
 import ReportesFinancieros from "./reportes/ReportesFinancieros.js"; // Importa el componente ReportesFinancieros
 import ConfigRolesYPermisos from "./configuracion/ConfigRolesYPermisos.js"; // Importa el componente ConfigRolesYPermisos
 import ConfigNotificaciones from "./configuracion/ConfigNotificaciones.js"; // Importa el componente ConfigNotificaciones
-import ExportacionDatos from "./configuracion/ExportacionDatos.js"; // Importa el componente ExportacionDatos
+//import ExportacionDatos from "./configuracion/ExportacionDatos.js"; // Importa el componente ExportacionDatos
 import SoporteRemoto from "./soporte/SoporteRemoto.js"; // Importa el componente SoporteRemoto
 import ManualUsuario from "./soporte/ManualUsuario.js"; // Importa el componente ManualUsuario
 import RegistrosAcceso from "./auditoria/RegistrosAcceso.js"; // Importa el componente RegistrosAcceso
@@ -157,9 +157,6 @@ export default function Dashboard() {
                   <li
                     className={location.pathname === "/dashboard/configuracion/notificaciones" ? "active" : ""}
                     onClick={() => navigate("/dashboard/configuracion/notificaciones")}>Notificaciones</li>
-                  <li
-                    className={location.pathname === "/dashboard/configuracion/exportacion" ? "active" : ""}
-                    onClick={() => navigate("/dashboard/configuracion/exportacion")}>Exportación de Datos</li>
                 </ul>
               )}
             </li>
@@ -223,7 +220,7 @@ export default function Dashboard() {
           <Route path="/reportes/financieros" element={<ReportesFinancieros />} /> {/* Ruta para Reportes Financieros */}
           <Route path="/configuracion/roles" element={<ConfigRolesYPermisos />} /> {/* Ruta para Roles y Permisos */}
           <Route path="/configuracion/notificaciones" element={<ConfigNotificaciones />} /> {/* Ruta para Notificaciones */}
-          <Route path="/configuracion/exportacion" element={<ExportacionDatos />} /> {/* Ruta para Exportación de Datos */}
+          
           <Route path="/soporte/remoto" element={<SoporteRemoto />} /> {/* Ruta para Soporte Remoto */}
           <Route path="/soporte/manual" element={<ManualUsuario />} /> {/* Ruta para Manual de Usuario */}
           <Route path="/auditoria/accesos" element={<RegistrosAcceso />} /> {/* Ruta para Registros de Acceso */}
