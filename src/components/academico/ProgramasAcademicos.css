@@ -1,0 +1,185 @@
+/* Estilos generales */
+.programas-academicos {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para la sección de programas */
+  .gestion-programas {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gestion-programas input,
+  .gestion-programas select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .gestion-programas button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .gestion-programas button:hover {
+    background-color: #218838;
+  }
+  
+  .listado-programas {
+    margin-top: 20px;
+  }
+  
+  .programa {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  .programa h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .programa p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Estilos para la sección de módulos */
+  .gestion-modulos {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gestion-modulos input,
+  .gestion-modulos select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .gestion-modulos button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .gestion-modulos button:hover {
+    background-color: #0056b3;
+  }
+  
+  .listado-modulos {
+    margin-top: 20px;
+  }
+  
+  .modulo {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  .modulo h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .modulo p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Estilos para la sección de materias */
+  .gestion-materias {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gestion-materias input,
+  .gestion-materias select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .gestion-materias button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .gestion-materias button:hover {
+    background-color: #5a6268;
+  }
+  
+  .listado-materias {
+    margin-top: 20px;
+  }
+  
+  .materia {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  .materia h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .materia p {
+    margin: 5px 0;
+    color: #555;
+  }
