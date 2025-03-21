@@ -38,6 +38,12 @@ export default function Login() {
           >
             Profesor
           </button>
+          <button
+            className={`tab ${userType === "ambos" ? "active" : ""}`}
+            onClick={() => setUserType("Profesor y Alumno")}
+          >
+            Profesor y alumno
+          </button>
         </div>
 
         {/* Título con icono */}
