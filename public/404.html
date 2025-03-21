@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta http-equiv="refresh" content="0; URL='/'" />
-</head>
-<body>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirigiendo...</title>
+    <script>
+      // Redirige todas las rutas a index.html
+      const segmentCount = 1; // Cambia esto si tu sitio está en una subruta (ej: /mi-sitio/)
+      const path = window.location.pathname.split('/').slice(segmentCount).join('/');
+      window.location.href = `/${path}`;
+    </script>
+  </head>
+  <body>
+    <p>Redirigiendo...</p>
+  </body>
 </html>
