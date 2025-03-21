@@ -102,3 +102,19 @@
     background-color: #17a2b8;
     color: #fff;
   }
+
+  /* Contenedor del gráfico */
+.grafico-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .grafico-container h2 {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  

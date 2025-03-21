@@ -1,5 +1,10 @@
 import React from "react";
-import "./Inicio.css"; // Importar el archivo CSS
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
+import "./Inicio.css";
+
+// Registrar los componentes del gráfico
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const Inicio = () => {
   // Datos simulados para el dashboard
@@ -11,9 +16,39 @@ const Inicio = () => {
   };
 
   const notificaciones = [
-    { id: 1, mensaje: "Cuota de octubre vence en 3 días.", tipo: "alerta" },
+    { id: 1, mensaje: "Cuota de Marzo vence en 3 días.", tipo: "alerta" },
     { id: 2, mensaje: "Nueva solicitud de soporte recibida.", tipo: "notificacion" },
   ];
+
+  // Configuración del gráfico
+  const data = {
+    labels: ["Alumnos Activos", "Docentes", "Pagos Pendientes", "Alertas Recientes"],
+    datasets: [
+      {
+        label: "Cantidad",
+        data: [
+          metricas.alumnosActivos,
+          metricas.docentes,
+          metricas.pagosPendientes,
+          metricas.alertasRecientes,
+        ],
+        backgroundColor: ["#007bff", "#28a745", "#ffc107", "#dc3545"],
+        borderRadius: 5,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
 
   return (
     <div className="inicio">
@@ -21,33 +56,18 @@ const Inicio = () => {
 
       {/* Resumen de Métricas */}
       <div className="resumen-metricas">
-        <div className="metrica">
-          <h2>Alumnos Activos</h2>
-          <p>{metricas.alumnosActivos}</p>
-        </div>
-        <div className="metrica">
-          <h2>Docentes</h2>
-          <p>{metricas.docentes}</p>
-        </div>
-        <div className="metrica">
-          <h2>Pagos Pendientes</h2>
-          <p>{metricas.pagosPendientes}</p>
-        </div>
-        <div className="metrica">
-          <h2>Alertas Recientes</h2>
-          <p>{metricas.alertasRecientes}</p>
-        </div>
+        {Object.entries(metricas).map(([key, value]) => (
+          <div className="metrica" key={key}>
+            <h2>{key.replace(/([A-Z])/g, " $1")}</h2>
+            <p>{value}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Accesos Rápidos */}
-      <div className="accesos-rapidos">
-        <h2>Accesos Rápidos</h2>
-        <div className="botones-acceso">
-          <button>Gestión de Alumnos</button>
-          <button>Gestión de Docentes</button>
-          <button>Pagos y Facturación</button>
-          <button>Configuración</button>
-        </div>
+      {/* Gráfico de barras */}
+      <div className="grafico-container">
+        <h2>Resumen de Datos</h2>
+        <Bar data={data} options={options} />
       </div>
 
       {/* Notificaciones y Alertas */}
